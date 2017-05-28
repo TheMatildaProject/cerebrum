@@ -1,0 +1,1 @@
+class BadWords(Object):
