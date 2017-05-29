@@ -1,6 +1,17 @@
-import boto3
+import os, sys
+from flask import Flask, jsonify, request
+from app.handlers.lex import Lex as LexHandler
 
-lex = boto3.client('lex-runtime', region_name='us-east-1', aws_access_key_id='', aws_secret_access_key='')
+app = Flask(__name__)
 
-response = lex.post_text(botName='Matilda', botAlias='matilda', userId='matilda', inputText='Hi!')
-print(response)
+@app.route('/', methods=['POST'])
+def app():
+    if not request.json or not 'message' in request.json:
+        return jsonify({'message': 'Missing message'}), 400
+    
+    response = LexHandler.sendMessage(request.json['message'])
+
+    return jsonify({'response': response});
+
+if __name__ == "__main__":
+    app.run(debug=True)
