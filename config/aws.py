@@ -1,12 +1,12 @@
 import os
 
-class AWS(Object):
+class AWS():
     @staticmethod
-    def getAccessKeyId(self):
+    def getAccessKeyId():
         return os.getenv('AWS_ACCESS_KEY_ID')
     @staticmethod
-    def getASecretKeyId(self):
+    def getSecretKeyId():
         return os.getenv('AWS_SECRET_KEY_ID')
     @staticmethod
-    def getRegionName(self):
+    def getRegionName():
         return os.getenv('AWS_REGION_NAME')

@@ -1,14 +1,14 @@
 import os
 
-class Lex(Object):
+class Lex():
     @staticmethod
-    def getBotName(self):
+    def getBotName():
         return os.getenv('LEX_BOT_NAME')
     
     @staticmethod
-    def getBotAlias(self):
+    def getBotAlias():
         return os.getenv('LEX_BOT_ALIAS')
 
     @staticmethod
-    def getUserId(self):
+    def getUserId():
         return os.getenv('LEX_USER_ID')
