@@ -3,4 +3,5 @@
 # through consulting the configured intents
 
 class FrontalLobe(object):
-	def 
+	def handleResponse(self, message: dict):
+		print (message)

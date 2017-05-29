@@ -15,7 +15,7 @@ def run():
     lexResponse = lex.sendMessage(request.json['message'])
     response = fl.handleResponse(lexResponse)
 
-    return jsonify({'response': response});
+    return jsonify({'response': ''});
 
 if __name__ == "__main__":
     app.run(debug=True)
