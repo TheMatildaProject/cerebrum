@@ -1,6 +1,6 @@
 import random
 
-class ChitChat(object):
+class ChitChatTwo(object):
     def __init__(self, message):
         message = message
 
@@ -12,9 +12,10 @@ class ChitChat(object):
 
     def _getResponses(self):
         return [
-            'Hello, how are you?',
-            'What is up?',
-            "Hello"
+            'Not too bad',
+            "Good, Good, I would be better if I had a real brain though",
+            'Alright, cannot complain',
+            'Good, thank you'
         ]
 
     

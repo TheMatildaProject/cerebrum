@@ -10,12 +10,12 @@ fl = FrontalLobe()
 @app.route('/', methods=['POST'])
 def run():
     if not request.json or not 'message' in request.json:
-        return jsonify({'message': 'Missing message'}), 400
+        return jsonify({'error': 'Missing message'}), 400
     
-    lexResponse = lex.sendMessage(request.json['message'])
+    lexResponse = lex.sendMessage(request.json)
     response = fl.handleResponse(lexResponse)
 
-    return jsonify({'response': ''});
+    return jsonify({'success': 'action performed'});
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True)

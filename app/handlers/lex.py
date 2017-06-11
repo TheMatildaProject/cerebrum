@@ -15,4 +15,4 @@ class Lex(object):
             botName=LexConfig.getBotName(),
             botAlias=LexConfig.getBotAlias(),
             userId=LexConfig.getUserId(),
-            inputText=text)
+            inputText=str(text))
