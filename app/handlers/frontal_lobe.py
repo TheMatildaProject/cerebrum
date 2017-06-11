@@ -34,19 +34,18 @@ class FrontalLobe(object):
 
         # Instantiate intent class from intent string...
         intentClass = eval(intent)(message)
+
         return intentClass.handle();
     
     def playResponse(self, audio):
         sound = bytes(audio, "utf-8")
         sound = base64.b64decode(sound)
 
-        f = open("test.ogg",'wb')
+        f = open("temp.ogg",'wb')
         f.write(sound)
         os.fsync(f)
         f.close()
 
         mixer.init()
-        print('loading')
-        mixer.music.load('test.ogg')
-        print('playing')
+        mixer.music.load('temp.ogg')
         mixer.music.play()
