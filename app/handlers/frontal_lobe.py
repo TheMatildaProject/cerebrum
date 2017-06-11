@@ -7,7 +7,7 @@ from app.intents.bad_words import BadWords
 from app.intents.chit_chat import ChitChat
 from app.intents.chit_chat_two import ChitChatTwo
 from app.intents.play_song import PlaySong
-from app.intents.weather import Weather
+from app.intents.todays_weather import TodaysWeather
 from pygame import mixer
 import base64
 import io

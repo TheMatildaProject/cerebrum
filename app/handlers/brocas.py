@@ -5,4 +5,4 @@ class Brocas(object):
     def textToSpeech(self, text):      
         payload = {"text": text}
         
-        return requests.post(BrocasConfig.getBrocasUrl(), json=payload);
+        return requests.post(BrocasConfig.getURL(), json=payload);

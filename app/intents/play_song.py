@@ -1,3 +1,7 @@
-class PlaySong(object):
-    def __init__(self):
-        return self
+from app.intents.intent import Intent
+
+class PlaySong(Intent):
+    _message = ""
+
+    def __init__(self, message):
+        self._message = message

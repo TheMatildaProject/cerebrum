@@ -2,7 +2,9 @@ from config.eye_in_the_sky import EyeInTheSky as EyeInTheSkyConfig
 import requests
 
 class EyeInTheSky(object):
-    def getWeatherForecast(self, text):      
+    def getWeatherForecast(self, text):
+        targetUrl = EyeInTheSkyConfig.getURL()
+        print(targetUrl)   
         payload = {"text": text}
         
         return requests.post(EyeInTheSkyConfig.getURL(), json=payload);

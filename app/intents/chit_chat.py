@@ -1,9 +1,7 @@
+from app.intents.intent import Intent
 import random
 
-class ChitChat(object):
-    def __init__(self, message):
-        message = message
-
+class ChitChat(Intent):
     def handle(self):
         return self._getRandomResponse()
 
