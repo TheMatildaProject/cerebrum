@@ -1,5 +1,5 @@
 class Intent(object):
-    message = ""
+    _message = ""
 
     def __init__(self, message):
-        self.message = message
+        self._message = message
