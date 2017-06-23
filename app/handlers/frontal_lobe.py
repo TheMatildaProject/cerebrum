@@ -2,7 +2,6 @@
 # On this context, the frontal lobe will swallow Lex's responses and return actionables
 # through consulting the configured intents
 
-from app.handlers.brocas import Brocas
 from app.intents.bad_words import BadWords
 from app.intents.chit_chat import ChitChat
 from app.intents.chit_chat_two import ChitChatTwo
@@ -17,12 +16,8 @@ class FrontalLobe(object):
         else:
             text = message['message']
 
-        brocas = Brocas();
-        speechData = brocas.textToSpeech(text).text;
-        speech = json.loads(speechData)["sound"]
-
-        self.playResponse(speech)
-            
+        return text
+             
 
     def handleIntent(self, message):
         intent = message["intentName"]
@@ -31,8 +26,3 @@ class FrontalLobe(object):
         intentClass = eval(intent)(message)
 
         return intentClass.handle();
-    
-    def playResponse(self, audio):
-        return true;
-        # should send back to the queue where vocal cord will poll from
-        
