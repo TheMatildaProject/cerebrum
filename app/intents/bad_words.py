@@ -1,4 +1,5 @@
 from app.intents.intent import Intent
+import random
 
 class BadWords(Intent):
     def handle(self):
