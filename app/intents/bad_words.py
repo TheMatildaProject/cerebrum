@@ -1,7 +1,15 @@
 from app.intents.intent import Intent
 
 class BadWords(Intent):
-    _message = ""
+    def handle(self):
+        return self._getRandomResponse()
 
-    def __init__(self, message):
-        self._message = message
+    def _getRandomResponse(self):
+        return random.choice(self._getResponses())
+
+    def _getResponses(self):
+        return [
+            'Hey, show some respect!',
+            'Oh boy...',
+            "How is your momma doing?"
+        ]
