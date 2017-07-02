@@ -1,7 +1,15 @@
+from app.handlers.echoic_memory import EchoicMemory
 from app.intents.intent import Intent
+import json
 
 class PlaySong(Intent):
-    _message = ""
+    def handle(Intent):
+        return Intent._getSongToPlay(Intent._message["slots"]["song"])
 
-    def __init__(self, message):
-        self._message = message
+    def _getSongToPlay(Intent, song):
+        echo = EchoicMemory()
+        response = echo.playSong(song)
+        
+        responseBody = json.loads(response.text)
+
+        return responseBody["video"]
